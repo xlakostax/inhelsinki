@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import './index.css';
 import EventsList from './EventsList';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 
@@ -18,13 +19,14 @@ const App = () => {
   return (
     <>
       <Header />
-      <Navigation
+      {/* <Navigation
         //onChange={handleChange}
         // onClick={handleSubmit}
-      />
+      /> */}
       <Routes history={history}>
         <Route path="/" element={<EventsList/>} exact />
       </Routes>
+      <Footer />
     </>
     
   )
