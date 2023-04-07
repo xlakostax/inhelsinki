@@ -56,7 +56,7 @@ const Header = () => {
 
   return (
       <Wrapper >
-        <Background style = { changeBackground }></Background>
+        <Background style = {changeBackground}></Background>
         <Logo>
           <h1><span>in</span>Helsinki</h1>
           <p>Essential City Guide</p>

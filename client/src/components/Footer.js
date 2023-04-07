@@ -1,4 +1,5 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 window.onscroll = () => {
   showToTopButton();
@@ -16,11 +17,11 @@ const Footer = () => {
   return (
     <footer>
     <div id='back-to-top_placeholder'>
-      <i
-        id="back-to-top"
-        className="fas fa-arrow-alt-circle-up"
+      <FontAwesomeIcon 
+        icon="fa-solid fa-circle-up"
+        id="back-to-top" 
         onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-        />
+      />
     </div>
     <ul className='footer-menu'>
       <li className = 'footer-menu-element'>

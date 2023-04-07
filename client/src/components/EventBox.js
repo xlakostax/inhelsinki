@@ -1,4 +1,5 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import moment from "moment";
 import '../styles/EventBox.css';
 
@@ -9,10 +10,10 @@ function EventBox(props) {
           {props.imageURL !== null? <img src={props.imageURL} alt="event-img"/> : <span />}
         </div>
           <p className='name'>{props.name}</p>
-          <p className="date-n-time"><i className="fas fa-calendar-alt"></i><br></br>{moment(props.startDate).format('LLL')}</p>
-          <p className="address" ><i className="fas fa-map-marker-alt"></i><br></br>{props.address}, {props.city}, {props.postcode}</p>
-          <p className="intro"><i className="fas fa-info-circle"></i><br></br>{props.intro}</p>
-          <p className="event-url"><i className="fas fa-link"></i> <a href={props.url} target="_blank" rel="noopener noreferrer">More details</a></p>
+          <p className="date-n-time"><FontAwesomeIcon icon="fa-solid fa-calendar-days" /><br></br>{moment(props.startDate).format('LLL')}</p>
+          <p className="address" ><FontAwesomeIcon icon="fa-solid fa-location-dot" /><br></br>{props.address}, {props.city}, {props.postcode}</p>
+          <p className="intro"><FontAwesomeIcon icon="fa-solid fa-circle-info" /><br></br>{props.intro}</p>
+          <p className="event-url"><FontAwesomeIcon icon="fa-solid fa-link" /> <a href={props.url} target="_blank" rel="noopener noreferrer">More details</a></p>
       </div>
     );
   }

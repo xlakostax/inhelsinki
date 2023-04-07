@@ -10,7 +10,10 @@ import './index.css';
 import EventsList from './EventsList';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fas} from '@fortawesome/free-solid-svg-icons';
+library.add(fas)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

@@ -1,25 +1,28 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export default function usePagination(page) {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [more, setMore] = useState(true); // indicates if there's more data to be retrieved from the API.
-
+  const [more, setMore] = useState(true);
+  const [error, setError] = useState(false);
+  
   useEffect(() => {
-    const initialData = async () => {
-        try {
-          const response = (await axios.get(`http://localhost:5000/event/`, {params: {page}})).data
-          console.log("Response", response.meta)
-          setData(prevData => [...new Set([...prevData, ...response.data])])
-          setMore(Boolean(response.meta.nextPage)); // set more to true if nextPage exists
-        } catch (error) {
-          console.log(error)
-        }
-    }
+    setError(false);
     setLoading(true);
-    initialData()
-  }, [page])
+    const initialData = async () => {
+      try {
+        const response = (await axios.get(`http://localhost:5000/event/`, { params: { page } })).data;
+        console.log("Response", response.meta);
+        setData((prevData) => [...new Set([...prevData, ...response.data])]);
+        setMore(Boolean(response.meta.nextPage));
+        setLoading(false);
+      } catch (error) {
+        setError(true)
+      }
+    };
+    initialData();
+  }, [page]);
 
-  return {data, loading, more};
+  return { data, error, loading, more };
 }

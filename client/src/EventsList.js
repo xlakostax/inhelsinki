@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 // import { Events, animateScroll as scroll} from 'react-scroll'
 
@@ -14,9 +15,6 @@ const EventsList = () => {
 
   const handleInfiniteScroll = () => {
     const endOfPage = window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
-    // let scrollPosition = window.scrollY;
-    // let pageHeight = document.body.offsetHeight;
-    // let windowHeight = window.innerHeight;
     if (endOfPage) {
       setPage(page+1)
       window.removeEventListener("scroll", handleInfiniteScroll);
@@ -48,9 +46,9 @@ const EventsList = () => {
           })}
         </article>
         {loading && (
-          <span id="loader">Loading...</span>
+          <span id="loader"><FontAwesomeIcon icon="fa-solid fa-arrows-spin" spin size="2xl" style={{color: "#b4c92b"}} /></span>
         )}
-        {!more && <div id="end">You've the reached the end</div>}
+        {!more && <span id="end">You've the reached the end</span>}
         {/*<div id='map-holder'>
           <aside className='sticky'>
 
