@@ -1,40 +1,42 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+import {Container, Menu, Element, Button} from '../styles/Footer'
+
 window.onscroll = () => {
   showToTopButton();
 }
 
 const showToTopButton = () => {
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-    document.getElementById("back-to-top").style.display = "block";
+    document.getElementById("icon").style.display = "block";
   } else {
-    document.getElementById("back-to-top").style.display = "none";
+    document.getElementById("icon").style.display = "none";
   }
 }
 
 const Footer = () => {
   return (
-    <footer>
-    <div id='back-to-top_placeholder'>
+    <Container>
+    <Button>
       <FontAwesomeIcon 
         icon="fa-solid fa-circle-up"
-        id="back-to-top" 
+        id="icon"
         onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
       />
-    </div>
-    <ul className='footer-menu'>
-      <li className = 'footer-menu-element'>
+    </Button>
+    <Menu className='footer-menu'>
+      <Element>
         About
-      </li>
-      <li className = 'footer-menu-element'>
+      </Element>
+      <Element>
         Contact Us
-      </li>
-      <li className = 'footer-menu-element last'>
+      </Element>
+      <Element>
         Disclaimer
-      </li>
-    </ul>
-  </footer>
+      </Element>
+    </Menu>
+  </Container>
   );
 }
 
