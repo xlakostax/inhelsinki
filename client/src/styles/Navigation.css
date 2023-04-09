@@ -1,0 +1,151 @@
+nav {
+  grid-area: nav;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #b4c92b;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  justify-content: flex-start;
+  color: #fff;
+}
+
+.main-menu {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-menu-element {
+  display: block;
+  width: 7em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.last {
+  padding-right: 1em;
+}
+
+.main-menu-element::after {
+  position: absolute;
+  content: '\25BE';
+}
+
+.main-menu-element:hover::after {
+  content: '\25B4';
+}
+
+.sub-menu {
+  position: absolute;
+  display: none;
+  top: 2.7em;
+  background-color: #fff;
+  color: #292929;
+  font-weight: 400;
+  font-size: 0.875em;
+  border: 1px #e2e2e2 solid;
+  border-top: #fff solid;
+  border-radius: 0 0 2px 2px;
+}
+
+.main-menu li:hover .sub-menu {
+  display: block;
+}
+
+.by-type, .by-language, .by-distance {
+  display: flex;
+  /* display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr); */
+  flex-direction: row;
+  margin: 0 1em;
+}
+
+.by-type {
+  margin-top: 1em;
+}
+
+.by-type-header, .by-language-header, .by-distance-header {
+  margin: 0 0.5em;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.filter-button {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 1em 0;
+}
+
+.filter-button input {
+  width: 0;
+  margin: 0;
+  visibility: hidden;
+}
+
+.filter-button span {
+  position: relative;
+  padding: 0.25em;
+  border: 1px solid #292929;
+}
+
+.filter-button input:checked+span {
+  background: #b4c92b;
+  color: #fff;
+  border: 1px solid #292929;
+}
+
+#apply-filter {
+  position: relative;
+  width: 48.4%;
+  height: auto;
+  margin: 1em 0.773em 1em;
+  border: 1px solid #292929;
+  background: #b4c92b;
+  color: #fff;
+  font-family: 'Hind';
+  font-weight: 400;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+#apply-filter:active {
+  background: #292929;
+}
+
+@media all and (min-device-width: 280px) and (max-device-width: 900px) and (orientation: portrait) {
+  .sub-menu {
+     left: 0;
+   }
+ 
+   .by-type, .by-language, .by-distance {
+     flex-wrap: wrap;
+     justify-content: flex-start;
+   }
+ }
+
+ @media all and (min-device-width: 280px) and (max-device-width: 900px) and (orientation: portrait) {
+  .sub-menu {
+     left: 0;
+   }
+ 
+   .by-type, .by-language, .by-distance {
+     flex-wrap: wrap;
+     justify-content: flex-start;
+   }
+ }

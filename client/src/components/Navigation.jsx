@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import RadioInput from "./RadioInput"
+import "../styles/Navigation.css"
 const Navigation = (props) => {
 
   return(
